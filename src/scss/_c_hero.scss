@@ -1,0 +1,73 @@
+.hero{
+    position: relative;
+    margin-top: 0;
+    //height: 36 * $base-unit;
+    height: 450px;
+    color: #fff;
+    //background-color: $color-2-light;
+    background: $color-2-light url(../img/hero-mob.jpg) no-repeat 50% 0;
+    
+    @include min-media($br-tablet){
+        height: 600px;
+        background-image: url(../img/hero-tab.jpg);
+    }
+    
+    @include min-media($br-desktop){
+        background-image: url(../img/hero-desk.jpg);
+    }
+    
+    @media (min-width: 1024px) and (orientation: landscape){
+        height: 100vh;
+        min-height: 450px;
+        background-size: cover;
+    }
+    
+    &__cont{
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        transform: translateY(-50%);
+        
+        @media (min-width: 1024px) and (orientation: landscape){
+            top: unset; // lub auto
+            transform: none;
+            bottom: 3 * $space;
+        }
+        
+        &--shadow{
+            @extend %simple-text-shadow;
+        }
+    }
+    
+    
+    &:before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        
+        $pattern-color: rgba(0,0,0,.2);
+        
+        background: 
+            linear-gradient(to top, transparent 1px, $pattern-color 1px, $pattern-color 2px, transparent 2px),
+            linear-gradient(to left, transparent 1px, $pattern-color 1px, $pattern-color 2px, transparent 2px);
+        background-size: 3px 3px;
+    }
+    
+    &:after{
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 40%;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        
+        background: 
+            linear-gradient(to bottom, transparent, rgba(0,0,0,.4) 3*$space);
+    }
+    
+}

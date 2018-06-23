@@ -1,0 +1,65 @@
+// poprawne 
+.video{
+    position: relative;
+
+    
+    &__cont{
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    
+        video{
+            height: 384px;
+            width: 100%;
+
+        }
+    }
+    
+    &__controls{
+        position: absolute;
+        max-width: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+   
+        
+        
+        &__pause, &__play{
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: -20px;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 1px 1px #000;
+            cursor: pointer;
+            
+            &:hover{
+                color: #7A217F; 
+            }
+        }
+        &__pause{
+            display: none;
+        }
+        @at-root .playing{
+            .video__controls__pause{
+                display: block;
+            }
+            .video__controls__play{
+                display: none;
+            }
+        }
+    
+    .video__hdr{
+        position: absolute;
+        color: #fff;
+        margin-top: 20px;
+        transform: translate(-50%, -50%);
+
+    }
+
+    }
+ 
+}
+
