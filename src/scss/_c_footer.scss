@@ -39,5 +39,11 @@
     &__copy{
         margin-top: $space;
         font-size: $body-font-size2;
+        text-align: right;
+        
+        a{
+            padding-left: $space * 0.5;
+
+        }
     }
 }
