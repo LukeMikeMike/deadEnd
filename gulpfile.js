@@ -26,7 +26,7 @@ gulp.task('sass', function () {
 
 
 gulp.task('js', function(){
-   gulp.src(['src/js/app.js'])
+   gulp.src(['src/js/*.js'])
     .pipe(gulp.dest('./web/js/'));
 });
 
