@@ -3,14 +3,36 @@
     position: relative;
 
     
+
     &__cont{
         position: relative;
-        max-width: 800px;
+        max-width: 720px;
         margin: 0 auto;
-    
+
+      
+
+        &:before{
+            content: "";
+            position: absolute;
+            // z-index: 1;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: linear-gradient(to left, rgba(122,33,127,0), rgba(122,33,127,1));
+            height: 385px;
+           overflow: hidden;
+            // max-width: 800px;
+        }
+
+        
+
         video{
-            height: 384px;
+            height: 385px;
             width: 100%;
+
+
+
 
         }
     }
@@ -62,4 +84,6 @@
     }
  
 }
+
+
 

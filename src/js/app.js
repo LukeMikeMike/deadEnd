@@ -1,3 +1,20 @@
+// let contact = document.getElementById('contactButton');
+
+
+//podpięcie drugiej strony do buttona
+let contact = document.querySelector("[data-href]");
+
+contact.addEventListener('click', function () {
+
+console.log('aaaaaa')
+ window.location.href = contact.getAttribute('data-href');
+
+
+
+})
+
+
+
 var _btn = document.querySelector("[data-js=\"navbtn\"]");
 
 _btn.addEventListener('click', function(){
@@ -34,37 +51,6 @@ _video.addEventListener('timeupdate', function(){
     _progress.style.transform = "scaleX("+ _video.currentTime / _video.duration + ")";
 });
 
-
-/** form **/
-var form_el = document.querySelector("[data-js=\"form\"]"),
-    formBtn = document.querySelector("[data-js=\"formBtn\"]");
-    
-form_el.onsubmit = function(event){
-    event.preventDefault();
-
-    // base js send post
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        alert('form send');
-
-        form_el.classList.remove('is-submitted');
-        form_el.reset();
-        
-        // tu pokazanie wiadomości o pomyślnym wysłaniu
-      }
-    };
-    xhttp.open("POST", "https://httpstat.us/200", true);
-    
-    // tu sprawdzenie walidacji
-    // lub usuwamy novalidate z formularza (wtedy będą komunikaty domyślne przeglądarki, ale nie wyśle)
-    //xhttp.send(new FormData(form_el));
-    console.log("wysyłam");
-};
-
-formBtn.addEventListener('click', function(){
-    form_el.classList.add('is-submitted');
-});
 
 
 
